@@ -1,4 +1,17 @@
-​[[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+​[build]
+  # Déploie les fichiers situés à la racine du dépôt (où se trouve index.html)
+  publish = "."
+  # Pas de commande de construction car c'est un site HTML/CSS/JS pur
+  command = ""
+
+[functions]
+  # Indique à Netlify où trouver vos fonctions (le chemin des fonctions chat.js, etc.)
+  # ATTENTION : Ce chemin est basé sur votre structure de fichiers montrée précédemment.
+  directory = "C3/netlify/fonctions"
+
+# Redirection essentielle pour le routage côté client (Single Page Application - SPA)
+# S'assure que toutes les URL non trouvées renvoient vers la page d'accueil (200 OK)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
